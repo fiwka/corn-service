@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: corn-service
+  jpa:
+    hibernate:
+      ddl-auto: update
+  datasource:
+    url: jdbc:postgresql://${POSTGRES_HOSTNAME:localhost}:${POSTGRES_PORT:5432}/${POSTGRES_DATABASE:cornservice}
+    username: ${POSTGRES_USERNAME:postgres}
+    password: ${POSTGRES_PASSWORD:test}
+  kafka:
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:localhost:9092}
+
+
+grpc:
+  server:
+    port: ${GRPC_PORT:9090}
+
+server:
+  port: ${SERVER_PORT:8999}
+
+springdoc:
+  api-docs:
+    path: /api-docs
